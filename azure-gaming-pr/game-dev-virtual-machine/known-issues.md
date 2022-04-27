@@ -1,0 +1,87 @@
+---
+title: Known issues and FAQs with the Azure Game Development Virtual Machine
+description: Learn about known issues and FAQ when you work with the Azure Game Development Virtual Machine.
+author: meaghanlewis
+ms.topic: troubleshoot
+ms.date: 04/21/2022
+ms.author: mosagie
+ms.prod: azure-gaming
+---
+
+# Known issues and FAQs with the Azure Game Development Virtual Machine
+
+This article discusses known issues to be aware of when you work with Azure Game Development VM. If you have suggestions about this product, please submit your ideas via this <a href="https://forms.office.com/r/VHK5iEqeBm" target="_blank">survey</a>;. Or join this <a href="https://discord.com/channels/684463257276121192/949072214689452083" target="_blank">Game Stack Discord channel</a> to connect with thousands of game developers around the world. Microsoft monitors the user feedback closely and listens to the voice of customers so that we can improve the service.so that we can improve the service.
+
+> [!NOTE]
+> This article isn't a comprehensive list of known issues. If you know of an issue that isn't listed, provide feedback at the bottom of the page.
+
+## Deploying the VM
+
+### No VM Size available
+
+You may receive the following error when you deploy the VM: "Operation could not be completed as it results in exceeding approved size Family Cores quota." Or you cannot find the VM Size when you attempt to create this Game Development VM.
+
+This is true when your subscription reaches the VM usage limits, especially the [GPU – accelerated compute](/azure/virtual-machines/sizes-gpu) SKUs which are not always enabled by default. You can try different regions, or [check resource usage against limits](/azure/networking/check-usage-against-limits) and increase the limit.
+
+> [!NOTE]
+> Currently, <a href="/azure/virtual-machines/nvv3-series" target="_blank">Standard NVSv3</a> and <a href="/azure/virtual-machines/nct4-v3-series" target="_blank">Standard NCASv3_T4</a> VM sizes are in high demand. If you opened a quota request before but it was backlogged, you can now fill and submit this <a href="https://forms.office.com/r/pjvL30p2zC" target="_blank">form</a> to expedite the approval process. Please provide the service request number on the form. You can also make an inquiry of your quota service request by reaching the Game Development VM engineering team via our <a href="https://discord.com/channels/684463257276121192/949072214689452083" target="_blank">Discord Channel</a>. Otherwise, you can try with the <a href="/azure/virtual-machines/nv-series" target="_blank">Standard NV</a> size which has better availability though less powerful.
+
+## Accessing the VM
+
+### Slow first-time sign-in
+
+You may see the following “Preparing Windows” screen stay for about 1 to 2 mins after your first sign-in. This is expected.  
+
+:::image type="content" source="./media/known-issues/preparing-windows.png" alt-text="Screenshot showing Preparing Windows message during sign in":::
+
+### Teradici "Connect Insecurely" message
+
+As Teradici uses self-signed certificates as the default, you may notice a window pop up that warns you that the certificate cannot be verified due to the certificate not being registered with a trusted certificate authority.
+
+:::image type="content" source="./media/remote-to-vm-with-teradici/teradici-connect-insecurely.png" alt-text="Screenshot showing the window to connect to Teradici insecurely":::
+
+Teradici uses HTTPs encryption with a self-signed private key. You can click Connect Insecurely to login to the VM. Learn more here about [configuring trusted signed certificates with Teradici](https://www.teradici.com/web-help/pcoip_connection_manager_security_gateway/19.08/security/creating_cmsg_cert/#default-certificate), which is recommended when deploying a production system.
+
+### Cannot sign in EPIC account with Google  
+
+You will need to verify Unreal Engine End-user license agreement (EULA) on the very first connection to the Game Development VM before using it. This requires you to log in with your EPIC Games account. If you use  Google, you may notice an error that it couldn’t sign you in.
+
+:::image type="content" source="./media/known-issues/couldnt-sign-you-in.png" alt-text="Screenshot showing EPIC Games sign in error with Google":::
+
+This is a known issue that the engineering team is working towards a fix. The current workaround is to use other mechanisms to log in with your EPIC Games account. You only need verify EULA once for each Game Development VM. And you can still use Google to sign in EPIC Games Launcher to run Unreal Engine inside this VM without problem.
+
+## Using the VM
+
+### Can’t run Visual Studio after first-time sign-in
+
+You may notice that you can’t open Visual Studio or other products immediately after first-time sign-in the Game Development VM. This is expected because GDK is still installing. You will need wait for a few minutes until GDK installation window disappears. Then you can use Visual Studio or other developer tools.
+
+:::image type="content" source="./media/create-game-development-vm-for-unreal/user-configuration-tasks-messages-terminal.png" alt-text="Screenshot showing Microsoft GDK installing":::
+
+### Slow performance when opening a project with Unreal Engine during compiling shaders
+
+You may experience a long wait to open an Unreal Engine project and see the slow progress of compiling shaders.
+
+:::image type="content" source="./media/known-issues/compiling-shaders.png" alt-text="Screenshot showing Unreal Editor is compiling shaders while loading project":::
+
+This can happen if you have Incredibuild installed without an active license or a limited license for only a few CPU cores. In such a scenario, Unreal Engine doesn’t utilize all the CPU cores that are assigned to this VM. Instead, only one core or just a few cores out of many are being used. Therefore, you notice the slowness when using Unreal Engine.  
+
+The solution is to have an active and [complete Incredibuild license](https://www.incredibuild.com/pricing). Or uninstall Incredibuild to remove the CPU core limitation when you use Unreal Engine on this VM.
+
+## Other FAQs
+
+#### How much does the Azure Game Development VM cost?
+
+There is no additional charge for the Azure Game Development VM from what you would pay if you were spinning up a Windows VM in Azure, as all the software is either free or bring your own license (i.e., Parsec, Teradici and Incredibuild). There are configurations like adding striped SSD disk volumes and Azure Files for fast shared SMB caches, which would increase the cost of using the VM. The cost is also determined by the VM SKU you choose, which would increase as you choose a larger SKU which has more cores, memory, temp SSD storage and throughput. Please see the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) to estimate costs.
+
+#### I see prompts from certain pre-installed software (i.e., EPIC launcher, Unreal Engine, etc) which reminds me some updates are available. Why, and what should I do?
+
+While Microsoft updates the Game Development VM image periodically, it can’t guarantee all software inside this VM is always up to date. End users can decide whether to install the software updates on their own. They have full control of the operating system and are responsible for maintaining and updating the software environment. See all the pre-installed software and [Tools included with the Azure Game Development Virtual Machine](./tools-included-azure-game-dev-kit.md).
+
+#### How does support work?  
+
+Microsoft supports its own included tooling and Azure infrastructure used to deploy the Game Dev VM. For any partner tooling, support will come directly from those partner support channels, which is specified when signing up for those products. If you have an issue when deploying the Game Dev VM, please try and look at the INSTALLED_SOFTWARE.txt file on the desktop which gives a log of what was installed, and you can always open a [support ticket](/azure/azure-portal/supportability/how-to-create-azure-support-request) with Azure.
+
+#### I’m using Windows 10 and can’t verify if this VM is utilizing the licensing benefits, is that a problem?  
+
+As long as you have the [eligible windows 10 subscription licenses](/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment#subscription-licenses-that-qualify-for-multitenant-hosting-rights) that qualify for Multitenant Hosting Rights, or you deploy Windows 10 with your [Visual Studio (formerly MSDN) subscription](/azure/virtual-machines/windows/client-images) on Azure for dev/test purposes, you’re not violating Microsoft’s licensing restrictions.

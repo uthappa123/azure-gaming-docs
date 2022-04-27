@@ -5,23 +5,23 @@
   items:
   - name: What is the Azure Game Development Virtual Machine?
     href: overview.md
-  - name: Tools included on the Game Development Virtual Machine
+  - name: Tools included
     href: tools-included-azure-game-dev-kit.md
-  - name: Choosing the right GPU SKU and optimizing costs
+  - name: Choosing the right GPU SKU
     href: choosing-gpu-sku.md   
 - name: Quickstarts
   expanded: false
   items:
   - name: Create a Game Development Virtual Machine with Unreal Engine
     href: create-game-development-vm-for-unreal.md
-  - name: Remoting into the Game Development Virtual Machine with Parsec 
+  - name: Remoting with Parsec 
     href: remote-to-vm-with-parsec.md
-  - name: Remoting into the Game Development Virtual Machine with Teradici 
+  - name: Remoting with Teradici 
     href: remote-to-vm-with-teradici.md  
 - name: Concepts
   expanded: false
   items:
-  - name: GitHub and Git Tools on the Game Development Virtual Machine
+  - name: GitHub and Git Tools
     href: github-git-tools-on-vm.md
   - name: Striped disks for more IOPS
     href: striped-disks-iops.md                                       
@@ -30,14 +30,21 @@
   items:
   - name: Integrate with Azure Active Directory
     href: integrate-vm-with-aad.md
-  - name: Use Azure Files for network derived data cache with Unreal Engine
+  - name: Use Azure Files with Unreal Engine
     href: use-azure-files-for-global-ddc.md
   - name: Integrate with a Perforce Depot
     href: integrate-perforce-depot.md
   - name: Enable Pixel Streaming
     href: enable-pixel-streaming.md  
+- name: Reference
+  expanded: false
+  items:
+  - name: Game Development Partners
+    href: game-development-partners.md
 - name: Resources
   expanded: false
   items:
   - name: Troubleshooting
-    href: troubleshoot-support.md               
+    href: troubleshoot-support.md
+  - name: Known Issues and FAQ
+    href: known-issues.md               

@@ -51,6 +51,15 @@ landingContent:
         - text: Enable Pixel Streaming
           url: enable-pixel-streaming.md
 
+  - title: Reference
+    linkLists:
+      - linkListType: reference
+        links:
+        - text: Azure Game Development Solutions with Microsoft Partners
+          url: game-development-partners.md
+        - text: Known Issues
+          url: known-issues.md  
+  
   # Card
   - title: Resources
     linkLists:

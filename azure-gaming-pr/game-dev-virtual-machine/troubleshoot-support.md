@@ -42,15 +42,15 @@ In some cases, if you see a pencil icon, then you click it and set up a [new quo
 :::image type="content" source="./media/troubleshoot-support/edit-icon.png" alt-text="Screenshot showing how to set up a quota limit":::
 
 > [!TIP]
-> If you prefer command line, you can run <a href="/azure/cloud-shell/quickstart" target="_blank">Bash in Azure Cloud Shell</a> in the Azure portal. <a href="/cli/azure/vm?view=azure-cli-latest#az-vm-list-skus" target="_blank">az vm list-skus</a>, and <a href="/cli/azure/vm?view=azure-cli-latest#az-vm-list-usage" target="_blank">az vm list-usage</a> are useful commands to start with. 
+> If you prefer command line, you can run <a href="/azure/cloud-shell/quickstart" target="_blank">Bash in Azure Cloud Shell</a> in the Azure portal. <a href="/cli/azure/vm?view=azure-cli-latest#az-vm-list-skus&preserve-view=true" target="_blank">az vm list-skus</a>, and <a href="/cli/azure/vm?view=azure-cli-latest#az-vm-list-usage&preserve-view=true" target="_blank">az vm list-usage</a> are useful commands to start with.
 
 **Example 1:** Find out which regions have supported VM sizes for Game Dev VM, and whether those sizes are available for your Azure subscription.
 ```azurecli-interactive
-az vm list-skus --all --output table | sort | grep "\([[:alnum:]]\+[[:space:]]\+\)Standard_N\(V[[:digit:]]\+\(s_v3\)\?\|C[[:digit:]]\+as_T4_v3\)\b"
+az vm list-skus --all --output table | grep "Locations\b\|---\|\([[:alnum:]]\+[[:space:]]\+\)Standard_N\(V[[:digit:]]\+\(s_v3\)\?\|C[[:digit:]]\+as_T4_v3\)\b" | (sed -u 2q; sort)
 ```
 **Example 2:** Get the compute resource usage, which supports Game Dev VM for the West US region in your Azure subscription.
 ```azurecli-interactive
-az vm list-usage --location westus -o table | sort | grep "\(NV\|NVSv3\|NCASv3_T4\)\b"
+az vm list-usage --location westus -o table | grep "Name\b\|---\|\(NV\|NVSv3\|NCASv3_T4\)\b" | (sed -u 2q; sort)
 ```
 
 ### Validation failure
@@ -71,9 +71,9 @@ It usually takes about 10 to 15 minutes to deploy the VM. If deployment fails, A
 
 If you choose Parsec or Teradici as the remoting tool into the VM, and the license information is incorrect or can’t be verified, you may notice the following failure with an error message at the end of deployment, when clicking on the **Operation details** link: _"VM has reported a failure when processing extension 'CustomScriptExtension-Teradici'. Error message: \"Command execution finished, but failed because it returned a non-zero exit code of: '1'. The command had an error output of: 'No license available.\r\nFailed to register with the cloud license server \"https://teradici.compliance.flexnetoperations.com/instances/.../request\"_.
 
-An Azure Custom Script Extension is used to verify your license information with each partner. If the information is wrong or the verification can’t finish because of a network connection issue, the above failure occurs. You can still access the VM using RDP and manually register your remoting solution with the correct information. You don’t need to restart the whole deployment. 
+An Azure Custom Script Extension is used to verify your license information with each partner. If the information is wrong or the verification can’t finish because of a network connection issue, the above failure occurs. You can still access the VM using RDP and manually register your remoting solution with the correct information. You don’t need to restart the whole deployment.
 
-If none of the above scenarios are applicable to your VM Deployment issue, please [open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request). The request should have the Service type: Virtual Machine running Windows, Problem type: Cannot create a VM, and Problem subtype: Troubleshoot marketplace image deployment failures.
+If none of the above scenarios are applicable to your VM Deployment issue, please <a href="https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/%7B%0D%0A%09%22pesId%22%3A+%226f16735c-b0ae-b275-ad3a-03479cfa1396%22%2C%0D%0A%09%22supportTopicId%22%3A+%22e2212b28-7a50-21a0-2346-d238a1010cfb%22%2C%0D%0A%09%22contextInfo%22%3A+%22Deployment+Issues+with+Game+Developer+VM%22%2C%0D%0A%09%22severity%22%3A+%224%22%0D%0A%7D" target="_blank">open a support request</a>. The request should have the Service type: Virtual Machine running Windows, Problem type: Cannot create a VM, and Problem subtype: Troubleshoot marketplace image deployment failures.
 
 :::image type="content" source="./media/troubleshoot-support/cannot-create-vm.png" alt-text="Screenshot showing what to include in support request when VM creation fails":::
 
@@ -81,7 +81,7 @@ If none of the above scenarios are applicable to your VM Deployment issue, pleas
 
 ### RDP
 
-There are three methods to access this VM. RDP, Parsec or Teradici. RDP is the default option, and it is always available. If you have any VM Access issue, the first step is to [troubleshoot the default RDP option](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection). If you need other support with RDP, please [open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request). The request should have the Service type: Virtual Machine running Windows, Problem type: Cannot connect to my VM, and Problem subtype: Failure to connect using RDP or SSH port.
+There are three methods to access this VM. RDP, Parsec or Teradici. RDP is the default option, and it is always available. If you have any VM Access issue, the first step is to [troubleshoot the default RDP option](/troubleshoot/azure/virtual-machines/troubleshoot-rdp-connection). If you need other support with RDP, please <a href="https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/%7B%0D%0A%09%22pesId%22%3A+%226f16735c-b0ae-b275-ad3a-03479cfa1396%22%2C%0D%0A%09%22supportTopicId%22%3A+%2292c2396d-b703-973f-1bca-2eea9425b21a%22%2C%0D%0A%09%22contextInfo%22%3A+%22RDP+or+SSH+connect+Failures+Issues+with+Game+Developer+VM%22%2C%0D%0A%09%22severity%22%3A+%224%22%0D%0A%7D" target="_blank">open a support request</a>. The request should have the Service type: Virtual Machine running Windows, Problem type: Cannot connect to my VM, and Problem subtype: Failure to connect using RDP or SSH port.
 
 :::image type="content" source="./media/troubleshoot-support/cannot-connect-vm.png" alt-text="Screenshot showing what to include in support request when VM connection fails with RDP":::
 
@@ -108,7 +108,7 @@ This Game Development VM supports Azure Active Directory (Azure AD) authenticati
 
 The most common issue is that Azure role assignment is not configured after VM is created. You need to set up either **Virtual Machine Administrator Login** or **Virtual Machine User Login** role on the Game Development VM to [authorize Azure AD login](/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows#configure-role-assignments-for-the-vm).
 
-If the troubleshooting methods in the above links can’t resolve your issue, please [open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request). The request should have the Service type: Virtual Machine running Windows, Problem type: VM Extensions not operating correctly, and Problem subtype: Azure Active Directory Login extension issue.
+If the troubleshooting methods in the above links can’t resolve your issue, please <a href="https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/%7B%0D%0A%09%22pesId%22%3A+%226f16735c-b0ae-b275-ad3a-03479cfa1396%22%2C%0D%0A%09%22supportTopicId%22%3A+%220969c3f5-eae0-7620-93c2-609254bcac83%22%2C%0D%0A%09%22contextInfo%22%3A+%22AAD+Login+Extension+Issues+with+Game+Developer+VM%22%2C%0D%0A%09%22severity%22%3A+%224%22%0D%0A%7D" target="_blank">open a support request</a>. The request should have the Service type: Virtual Machine running Windows, Problem type: VM Extensions not operating correctly, and Problem subtype: Azure Active Directory Login extension issue.
 
 :::image type="content" source="./media/troubleshoot-support/vm-extensions-not-operating.png" alt-text="Screenshot showing what to include in support request when VM extensions not operating correctly":::
 
@@ -117,7 +117,6 @@ If the troubleshooting methods in the above links can’t resolve your issue, pl
 This VM comes pre-installed with [many different tools](./tools-included-azure-game-dev-kit.md). If you have an issue with a partner’s tooling, please reach out directly to that partner for support on their specific solution. One common issue you may notice with pre-installed tools can be related to network restriction, as some tools use different network ports to communicate with other devices or services. The Azure Game Development VM doesn’t block those ports. However, you may have your own security policies which block certain ports on Azure. You need to check with your network administrator and make sure the network Access Control List (ACL) or other security mechanisms like Blueprint policies in your environment don’t block the required network connection.
 
 To know which tools were successfully installed on your VM, you can find a log file named **INSTALLED SOFTWARE.txt** on the desktop after VM is deployed. This file lists all the pre-installed software and the installation status. This can be a valuable resource to troubleshoot pre-installed tooling related issues.
-If the issue you find relates to the pre-install tools, you should reach the respective support channels or leverage community resources, like our [Discord channel](https://discord.gg/6WWxr3xXBY), [Microsoft Q&A](https://techcommunity.microsoft.com/), or [Stack Overflow](https://stackoverflow.com/search?q=gdvm) to get help. However, if you believe this is a Game Development VM related issue, please [open a support request](/azure/azure-portal/supportability/how-to-create-azure-support-request) with the Service type: High Performance Computing (HPC), Problem type: HPC VM (N or H series), and the most relevant problem subtype.
-
+If the issue you find relates to the pre-install tools, you should reach the respective support channels or leverage community resources, like our [Discord channel](https://discord.gg/6WWxr3xXBY), [Microsoft Q&A](https://techcommunity.microsoft.com/), or [Stack Overflow](https://stackoverflow.com/search?q=gdvm) to get help. However, if you believe this is a Game Development VM related issue, please <a href="https://ms.portal.azure.com/#create/Microsoft.Support/Parameters/%7B%0D%0A%09%22pesId%22%3A+%22e00b1ed8-fc24-fef4-6f4c-36d963708ae1%22%2C%0D%0A%09%22supportTopicId%22%3A+%229cfdee6c-9044-62fa-6a3f-5f3dbded7124%22%2C%0D%0A%09%22contextInfo%22%3A+%22Virtual+Maxhine+Issues+%28N+or+H+Series%29+On+Game+Developer+VM%22%2C%0D%0A%09%22severity%22%3A+%224%22%0D%0A%7D" target="_blank">open a support request</a> with the Service type: High Performance Computing (HPC), Problem type: HPC VM (N or H series), and the most relevant problem subtype.
 
 :::image type="content" source="./media/troubleshoot-support/hpc-issue.png" alt-text="Screenshot showing what to include in support request when there is an HPC issue":::
