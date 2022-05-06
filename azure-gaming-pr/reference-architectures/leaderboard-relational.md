@@ -33,10 +33,12 @@ This reference architecture assumes the following **large scale** requirements:
 - Final individual game scores should be immediately available to the player upon game completion
 - Players get daily rewards based on their rank and the global leaderboard used to define rank should be easily refreshed every 4 minutes (should run with ample execution-time buffer).
 - Gaming history should be periodically archived out of the “hot path.”  Archiving should be fast and not impact concurrent game result activity.
-The data tier in this reference architecture also assumes coverage of a single game that is accessible across one or more platforms (Xbox, PlayStation, Desktop, iOS, Android, etc.).
+The data tier in this reference architecture also assumes coverage of a single game that is accessible across one or more platforms (Xbox, PlayStation&#174;, Desktop, iOS, Android, etc.).
 
 While this reference architecture can be extended to support multiple games, isolating by game can help with individual tenant scale and the avoiding of “noisy” neighbors and concurrency issues.
 
+"PlayStation" is a registered trademark or trademark of Sony Interactive Entertainment Inc.
+ 
 ### Service tiers for gaming leaderboard performance and scalability
 
 To ensure sufficient resources for gaming launches and ongoing large-scale throughput, consider implementing the data tier on [Premium or Business Critical](https://docs.microsoft.com/azure/sql-database/sql-database-service-tier-business-critical) service tier models. These service tiers are designed for games that require low-latency responses from the underlying SSD storage and provide fast recovery if the underlying infrastructure fails. Business Critical enables a free of charge readable secondary replica of the primary database.

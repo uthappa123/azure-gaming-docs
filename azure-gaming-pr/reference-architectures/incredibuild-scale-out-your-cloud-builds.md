@@ -11,7 +11,7 @@ ms.prod: azure-gaming
 
 # Set up Incredibuild on Azure DevOps build agents
 
-This guide will show how to set up Incredibuild on an Azure DevOps Windows build agent as part of an Azure-powered build pipeline from the related GDC 2022 talk . This document is not intended as a substitute for Incredibuild’s documentation, rather, it aims to give the context of Incredibuild setup within an Azure DevOps build pipeline. We will refer to the Incredibuild documentation where appropriate.
+This guide will show how to set up Incredibuild on an Azure DevOps Windows build agent as part of an Azure-powered build pipeline from the related GDC 2022 talk . This document is not intended as a substitute for Incredibuild's documentation, rather, it aims to give the context of Incredibuild setup within an Azure DevOps build pipeline. We will refer to the Incredibuild documentation where appropriate.
 
 This document also assumes the reader has some fundamental knowledge of:
 
@@ -67,9 +67,9 @@ In this case, we assume:
 
 Also consider where your Helper Agents will come from. During the Incredibuild Cloud setup, you will be asked to specify what type(s) of VMs you would like to use, and the maximum number of VMs to scale.
 
-You also have the option of using Spot VM instances as agents. Spot instances allow you to take advantage of Azure’s unused capacity at a significant cost savings. The trade-off is that when Azure needs the capacity back, the Azure infrastructure will evict these Spot Virtual Machines. However, because of the way Incredibuild divides the compute tasks, Azure Spot VM remain a viable option for a build pipeline. For more information on Azure Spot VMs, please see the **[documentation](/azure/virtual-machines/spot-vms)**.
+You also have the option of using Spot VM instances as agents. Spot instances allow you to take advantage of Azure's unused capacity at a significant cost savings. The trade-off is that when Azure needs the capacity back, the Azure infrastructure will evict these Spot Virtual Machines. However, because of the way Incredibuild divides the compute tasks, Azure Spot VM remain a viable option for a build pipeline. For more information on Azure Spot VMs, please see the **[documentation](/azure/virtual-machines/spot-vms)**.
 
-You should also check your Azure core quota. You cannot allocate more VMs of a certain type than your Subscriptions’ quotas allow, so make sure that you confirm you can allocate as many as you need. You can **[request more quota](/azure/azure-portal/supportability/per-vm-quota-requests)** of a certain VM SKU if needed.
+You should also check your Azure core quota. You cannot allocate more VMs of a certain type than your Subscriptions' quotas allow, so make sure that you confirm you can allocate as many as you need. You can **[request more quota](/azure/azure-portal/supportability/per-vm-quota-requests)** of a certain VM SKU if needed.
 
 ### Hybrid setup
 
@@ -77,7 +77,7 @@ You may already have an on-premises compute farm that you would like to use as p
 
 One consideration is to use your on-premises resources as the mainstay of your build pipeline, and then use Azure VMs to burst when needed.
 
-Don’t forget to check your Azure core quota as well. If you don’t have enough quota of a certain SKU of interest, in certain Azure regions, you should apply ahead of time for a quota increase as it could take some time.
+Don't forget to check your Azure core quota as well. If you don't have enough quota of a certain SKU of interest, in certain Azure regions, you should apply ahead of time for a quota increase as it could take some time.
 
 ### Licensing
 
@@ -93,7 +93,7 @@ Incredibuild specifies requirements for open ports, networking, storage, operati
 
 ## Setting up Incredibuild
 
-The Azure Marketplace offers a standalone Incredibuild Cloud offering as well as the new [Azure Game Development VM](../game-dev-virtual-machine/overview.md). These have Incredibuild already installed, so we’ll go through the configuration steps to get it running.
+The Azure Marketplace offers a standalone Incredibuild Cloud offering as well as the new [Azure Game Development VM](../game-dev-virtual-machine/overview.md). These have Incredibuild already installed, so we'll go through the configuration steps to get it running.
 
 You might also have an existing machine on which you want to install Incredibuild directly. The only difference is here is you must first obtain the Incredibuild installer and install the software, and the rest of the steps will be the same. Please contact Incredibuild to get their installer package.
 
@@ -101,7 +101,7 @@ You might also have an existing machine on which you want to install Incredibuil
 
 #### 1. Choose your deployment
 
-Here, you can choose from a range of suggested VM types to deploy your Incredibuild main machine (the one containing the initiator Agent and a Coordinator), including some pre-set options. If you’re not sure what to choose, try a pre-set option of a General Purpose D-series default VM, that should give you a good balance of compute, networking and storage performance to begin with.  
+Here, you can choose from a range of suggested VM types to deploy your Incredibuild main machine (the one containing the initiator Agent and a Coordinator), including some pre-set options. If you're not sure what to choose, try a pre-set option of a General Purpose D-series default VM, that should give you a good balance of compute, networking and storage performance to begin with.  
 
 #### 2. Create the Incredibuild VM
 

@@ -91,7 +91,7 @@ In this use case the **player's score will be ranked based on two variables: sys
 }
 ```
 
-To use a concrete example, if a game leveraging this reference architecture and implementation was launched on both Xbox, PlayStation and PC platforms and it only had two levels (1 and 2), that would end up generating the following partitions in Azure Cosmos DB:
+To use a concrete example, if a game leveraging this reference architecture and implementation was launched on both Xbox, PlayStation&#174; and PC platforms and it only had two levels (1 and 2), that would end up generating the following partitions in Azure Cosmos DB:
 
 - Partition 1 (all_level1)
 - Partition 2 (all_level2)
@@ -101,6 +101,8 @@ To use a concrete example, if a game leveraging this reference architecture and 
 - Partition 6 (xbox_level2)
 - Partition 7 (ps4_level2)
 - Partition 8 (pc_level2)
+
+"PlayStation" is a registered trademark or trademark of Sony Interactive Entertainment Inc.
 
 The schema for the game play data sent at the completion of a level is this:
 
