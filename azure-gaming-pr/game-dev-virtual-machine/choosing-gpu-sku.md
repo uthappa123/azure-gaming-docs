@@ -40,9 +40,9 @@ Though your decision to choose a particular GPU SKU might be more around capabil
 
 Before deploying the Game Development Virtual Machine, please check if your Azure subscription has enough quota to deploy GPU-intensive VMs. In the Azure Portal under the **Subscriptions > <_SUBSCRIPTION_> -> Usage + Quotas** blade, select the Location(s) you want to ensure you have quota, and just choose _“Microsoft.Compute”_ as the Provider. This will display a list of CPU families, where you can either scroll down to find the desired family supported by the Game Dev VM, or quickly filter the list by putting one of the following supported CPU families in the Search box: Standard NV Family vCPUs, Standard NVSv3 Family vCPUs and Standard NCASv3_T4 Family vCPUs. When deploying the VM, if you see a message that a usage limitation has been reached, or an exclamation mark saying “VM size currently unavailable”, you can follow the steps above or create a support request to increase your quota.  
 
-## NV Series Deprecated on September 1st, 2022
+## NV Series Deprecated on August 31st, 2023
 
-Currently the Game Development Virtual Machine supports the NV series of GPUs but be aware that these GPUs will be deprecated on September 1st, 2022. Learn more about the latest updates, expectations and migration steps. As the NV series is an older generation, it’s recommended that you use the newer NVv3-series VMs where possible, unless there was a capacity limitation in your region due to a large demand for the NVv3-series.  
+Currently the Game Development Virtual Machine supports the NV series of GPUs but be aware that these GPUs will be deprecated on August 31st, 2023. Learn more about the latest updates, expectations and migration steps on the [NV-series page](/azure/virtual-machines/nv-series). As the NV series is an older generation, it’s recommended that you use the newer NVv3-series VMs where possible, unless there was a capacity limitation in your region due to a large demand for the NVv3-series.  
 
 ## GPU Drivers are already pre-installed
 

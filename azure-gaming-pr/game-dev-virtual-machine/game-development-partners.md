@@ -15,8 +15,8 @@ In addition to the Azure Game Development Virtual Machine, Microsoft has partner
 ## [Epic Games](https://www.epicgames.com/site/home)
 
 - [Deploying Unreal Engine 4 on Azure](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/CloudDeployments/Azure/)
-- [Unreal Engine Pixel Streaming in Azure](https://developer.microsoft.com/en-us/games/blog/announcing-unreal-engine-pixel-streaming-in-azure/)
-- [Unreal Engine Pixel Streaming in Azure](https://azuremarketplace.microsoft.com/marketplace/apps/epicgames.unreal-pixel-streaming?tab=Overview)
+- [Announcing Unreal Engine Pixel Streaming in Azure](https://developer.microsoft.com/games/blog/announcing-unreal-engine-pixel-streaming-in-azure/)
+- [Unreal Engine Pixel Streaming in Azure (Azure Marketplace Version)](https://azuremarketplace.microsoft.com/marketplace/apps/epicgames.unreal-pixel-streaming?tab=Overview)
 
 ## [Incredibuild](https://www.incredibuild.com/)
 
