@@ -58,6 +58,12 @@ You may notice that you can’t open Visual Studio or other products immediately
 
 :::image type="content" source="./media/create-game-development-vm-for-unreal/user-configuration-tasks-messages-terminal.png" alt-text="Screenshot showing Microsoft GDK installing":::
 
+### Can't use Unreal Engine or other 3D applications
+
+You may see certain error message when you start 3D application on the Game Dev VM. For example, with Unreal Engine, you see message like *"A D3D11-compatible GPU (Feature Level 11.0, Shader Model 5.0) is required to run the engine."*
+
+This is possibly because you intended to use this VM as a build server when you first deployed it. Therefore, the VM size you chose before didn't fall into [NV-series](/azure/virtual-machines/nv-series),  [NVv3-series](/azure/virtual-machines/nvv3-series) or [NCasT4_v3-series](/azure/virtual-machines/nct4-v3-series). Only these VM sizes support 3D applications and 3D content editing. Please check your VM size and redeploy with correct one which has GPU. You can still keep this VM for your build server as you originally planned.  
+
 ### Slow performance when opening a project with Unreal Engine during compiling shaders
 
 You may experience a long wait to open an Unreal Engine project and see the slow progress of compiling shaders.
