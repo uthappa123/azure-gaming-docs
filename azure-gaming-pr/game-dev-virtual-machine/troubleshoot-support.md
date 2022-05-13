@@ -29,7 +29,7 @@ If you can’t find your desired VM SKUs when you attempt to create the VM, it c
 	
 :::image type="content" source="./media/troubleshoot-support/select-vm-size.png" alt-text="Screenshot showing the Azure Portal dashboard to select a VM size":::
 
-You can [check resource usage against limits](/azure/networking/check-usage-against-limits) if you believe you need more quota. Select the location(s) you want to deploy the VM. And choose **Microsoft.Compute** as the Provider. Confirm that the VM sizes: **Standard NV Family vCPUs**, **Standard NVSv3 Family vCPUs**, and **Standard NCASv3_T4 Family vCPUs** are available since these are the sizes supported by the Game Development VM.
+To check if your region supports the required SKUs, please go to [Azure Products by Region](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) and examine if **NCasT4v3-series**, **NV-series**, or **NVv3-series** is available. You can also [check resource usage against limits](/azure/networking/check-usage-against-limits) if you believe you need more quota. Select the location(s) you want to deploy the VM. And choose **Microsoft.Compute** as the Provider. Confirm that the VM sizes: **Standard NV Family vCPUs**, **Standard NVSv3 Family vCPUs**, and **Standard NCASv3_T4 Family vCPUs** are available since these are the sizes supported by the Game Development VM.
 
 :::image type="content" source="./media/troubleshoot-support/request-increase.png" alt-text="Screenshot showing the available VM sizes and how to request quota increases":::
 
