@@ -44,7 +44,7 @@ In both ways, you might be prompted to sign in to your Azure account if you're n
 > If you choose Windows 10, you need confirm that you have an eligible license with [multi-tenant hosting rights](/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment), unless you want to use this VM for dev/test scenarios if you have an appropriate [Visual Studio (formerly MSDN) subscription](/azure/virtual-machines/windows/client-images).
 
 6. Click  **Next: Game Development Tools**
-7. You will see **Select Game Engine.** Select **Unreal Engine Version 4.27** or **5.0 Preview** from the dropdown. A list of pre-installed common free game Development tools will show up.
+7. You will see **Select Game Engine.** Select **Unreal Engine Version 4.27** or **5.0** from the dropdown. A list of pre-installed common free game Development tools will show up.
 
     - This VM supports [Unreal Pixel Streaming](https://docs.unrealengine.com/4.27/SharingAndReleasing/PixelStreaming/). You can check the box if you want to enable this feature, which opens the required ports.
     - This VM can be configured to pull down a repository from Perforce after deployment if you already have a Perforce Helix Core version control server in place. If desired, check the box Connect to and sync a Perforce depot to configure the Perforce depot to pull from. If you do not have a Perforce server setup, you can [spin one up from the Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/perforce.perforce-enhanced-studio-pack).
