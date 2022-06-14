@@ -20,7 +20,10 @@ Cognitive Services can be used to improve a variety of gaming scenarios, both in
 * [Text Translation](./cognitive-text-translation.md)
   * Translate text between languages so players across the world can communicate with each other in their native language.
 * [Text to Speech](./cognitive-text-to-speech.md)
-  * Help being everyone into the conversation by translating text to audio.
+  * Help being everyone into the conversation by synthesizing text to audio.  
+  * Game dialogue prototyping to shorten the amount of time and money spent in product to get the game to market sooner, you can rapidly swap lines of dialog and listen to variations in real-time to ensure accuracy. 
+  * Make gaming accessible and localized to read out the storylines or instructions to individuals unable to read the text or language, or younger users that have not yet to be taught to read. 
+  * Branded voice building for NPC with consistent quality and speaking style, you can add emotions, accents, nuances, laughter, and other paralinguistic sounds and expressions.  
 * [Customer Service Bot](./cognitive-css-bot.md)
   * Let players get help with multiple areas of the game, such as hints, supports, and release information, from a chat bot that can be hosted on multiple channels.
 
