@@ -84,6 +84,9 @@ There is no additional charge for the Azure Game Development VM from what you wo
 
 While Microsoft updates the Game Development VM image periodically, it can’t guarantee all software inside this VM is always up to date. End users can decide whether to install the software updates on their own. They have full control of the operating system and are responsible for maintaining and updating the software environment. See all the pre-installed software and [Tools included with the Azure Game Development Virtual Machine](./tools-included-azure-game-dev-kit.md).
 
+#### How to update GPU drivers on the Game Dev VM?
+The Game Dev VM with VM sizes in NV-series, NVv3-series and NCas_T4_v3 series comes with NVIDIA GRID drivers. These drivers are used specifically for virtual desktop infrastructure (VDI) solutions in cloud & data centers. Therefore, you need to update NVIDIA GRID drivers, instead of the regular Geforce drivers to avoid any unexpected issues. You can find the latest supported NVIDIA GRID drivers for Azure VM running windows on the website: <a href="/azure/virtual-machines/windows/n-series-driver-setup#nvidia-grid-drivers" target="_blank"> Azure N-series NVIDIA GPU driver setup for Windows - Azure Virtual Machines </a> .
+
 #### How does support work?  
 
 Microsoft supports its own included tooling and Azure infrastructure used to deploy the Game Dev VM. For any partner tooling, support will come directly from those partner support channels, which is specified when signing up for those products. If you have an issue when deploying the Game Dev VM, please try and look at the INSTALLED_SOFTWARE.txt file on the desktop which gives a log of what was installed, and you can always open a [support ticket](/azure/azure-portal/supportability/how-to-create-azure-support-request) with Azure.
