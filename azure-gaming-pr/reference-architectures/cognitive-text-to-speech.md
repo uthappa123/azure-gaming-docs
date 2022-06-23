@@ -9,11 +9,11 @@ ms.author: brpeek
 ms.prod: azure-gaming
 ---
 
-# Text to Speech Reference Architecture
+# Text-to-Speech Reference Architecture
 
-Help bring everyone into the conversation by converting text messages to audio using **text to speech** for scenarios, such as game dialogue prototyping, greater accessibility, or NPC voices. Text-to-Speech includes prebuilt neural voice and custom neural voice features. Prebuilt neural voice can provide highly natural out-of-box voices with leading voice variety in terms of a large portfolio of languages and voices. Custom neural voice is an easy-to-use self-service for creating a highly natural custom voice. For details on the two features and voice samples, see [Text-to-Speech overview](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
+Help bring everyone into the conversation by converting text messages to audio using **Text-to-Speech** for scenarios, such as game dialogue prototyping, greater accessibility, or NPC voices. Text-to-Speech includes prebuilt neural voice and custom neural voice features. Prebuilt neural voice can provide highly natural out-of-box voices with leading voice variety in terms of a large portfolio of languages and voices. Custom neural voice is an easy-to-use self-service for creating a highly natural custom voice. For details on the two features and voice samples, see [Text-to-Speech overview](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
 
-This article will describe the architecture used in [this sample on GitHub](https://github.com/Azure-Samples/gaming-cognitive-services-text-to-speech). Keep in mind that the code from this reference architecture is only an example for guidance and there may be places to optimize the code before using in a production environment.
+This article will describe the architecture used in [this sample on GitHub](https://github.com/Azure-Samples/gaming-cognitive-services-text-to-speech). Keep in mind that the code from this reference architecture is only an example for guidance and there may be places to optimize the code before using in a production environment. You can also see the quickstart on [how to convert text to speech](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/get-started-text-to-speech).
 
 ## Architecture Diagram
 
@@ -37,8 +37,8 @@ When enabling this functionality in your game, keep in mind the following benefi
 - **Voices and languages supported** - A large portfolio of languages and variants are supported. For a complete list of voices, see the [prebuilt neural voice](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#prebuilt-neural-voices) and [custom neural voice](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#custom-neural-voice). You can also specify multiple languages for Text-to-Speech output. For details, see [how to adjust speaking languages](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#adjust-speaking-languages). For custom neural voice, you can select to create [different languages](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support?tabs=speechtotext#custom-neural-voice) from single language training data.
 - **Emotional styles supported** - [Emotional tones](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support?tabs=speechtotext#voice-styles-and-roles), such as cheerful, angry, sad, excited, hopeful, friendly, unfriendly, terrified, shouting, and whispering. You can adjust the [speaking style, style degree, and role](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup?tabs=csharp#adjust-speaking-styles) at the sentence level.
 - **Low latency real-time speech synthesis supported** - Use the [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-text-to-speech?tabs=terminal&pivots=programming-language-swift) or [REST API](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech) to convert text-to-speech by using prebuilt neural voices or custom neural voices.
-- **Visemes supported** - You can use [visemes](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-speech-synthesis-viseme?pivots=programming-language-csharp) during real-time synthesizing to control the movement of 2D and 3D avatar models, so that the mouth movements are perfectly matched to synthetic speech. 
-- **Fine-tuning Text-to-Speech output with SSML** - With SSML, you can customize Text-to-Speech outputs, with richer voice tuning supports. For more details, see [how to improve synthesis with SSML](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup).
+- **Visemes supported** - You can use [visemes](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-speech-synthesis-viseme) during real-time synthesizing to control the movement of 2D and 3D avatar models, so that the mouth movements are perfectly matched to synthetic speech. 
+- **Fine-tuning Text-to-Speech output with Speech Synthesis Markup Language (SSML)** - With SSML, you can customize Text-to-Speech outputs, with richer voice tuning supports. For more details, see [how to improve synthesis with SSML](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-synthesis-markup).
 - **Audio outputs** - There is a list of supported [audio formats](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech#audio-outputs). Each incorporates a bitrate and encoding type. The Speech Service supports 48-KHz on `en-US` and `zh-CN` regions. Other audio outputs lower than 48-KHz will be up-sampled to 48-KHz. 
 - **Regions supported** - For information about regional availability, see the [regions](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#text-to-speech) topic.
 
@@ -88,7 +88,7 @@ Finally, add these Function [application settings](https://docs.microsoft.com/az
 
 Be diligent about cleaning up the audio files saved in persistent storage.  See the [managing Blob storage lifecycle](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) documentation for more information.
 
-### Azure Text to Speech Service
+### Azure Text-to-Speech Service
 
 To learn about the benefits and capabilities of the Text-to-Speech service, see [Text-to-Speech overview](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
 
