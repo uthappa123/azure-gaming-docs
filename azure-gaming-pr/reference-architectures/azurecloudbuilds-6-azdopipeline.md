@@ -72,6 +72,7 @@ variables:
   buildtag: 
   outputfolder: c:\BuildOutput
 
+steps:
 - task: Perforce@1
   displayName: Sync Perforce to CL
   inputs:
@@ -194,7 +195,7 @@ The number after definitionId is your pipeline’s serial number; note it for th
 ```sh
 #!/bin/sh
 
-curl -u <PAT token> -X POST https://dev.azure.com/<your ADOName>/<yourProjectName>/_apis/pipelines/<pipelineNumber>/runs?api-version=6.0-preview.1 -H "Content-Type: application/json" -d '{"variables":{"CHANGESET":{"isSecret":false,"value":"'$1'"}}}'
+curl -u :<PAT token> -X POST https://dev.azure.com/<your ADOName>/<yourProjectName>/_apis/pipelines/<pipelineNumber>/runs?api-version=6.0-preview.1 -H "Content-Type: application/json" -d '{"variables":{"CHANGESET":{"isSecret":false,"value":"'$1'"}}}'
 ```
 
 > [!NOTE]
@@ -222,7 +223,7 @@ su – perforce
 8. Edit the p4 triggers file.
 
 ```
-p4triggers
+p4 triggers
 ```
 
 9. The default editor, vi, starts up with the triggers file.

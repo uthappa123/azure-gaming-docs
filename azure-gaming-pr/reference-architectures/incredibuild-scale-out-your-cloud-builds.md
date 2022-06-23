@@ -93,7 +93,7 @@ Incredibuild specifies requirements for open ports, networking, storage, operati
 
 ## Setting up Incredibuild
 
-The Azure Marketplace offers a standalone Incredibuild Cloud offering as well as the new [Azure Game Development VM](../game-dev-virtual-machine/overview.md). These have Incredibuild already installed, so we'll go through the configuration steps to get it running.
+The Azure Marketplace offers a standalone Incredibuild Cloud offering as well as the new [Azure Game Developer VM](/gaming/azure/game-dev-virtual-machine). These have Incredibuild already installed, so we’ll go through the configuration steps to get it running.
 
 You might also have an existing machine on which you want to install Incredibuild directly. The only difference is here is you must first obtain the Incredibuild installer and install the software, and the rest of the steps will be the same. Please contact Incredibuild to get their installer package.
 
