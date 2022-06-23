@@ -49,6 +49,10 @@ This could be due to a fault service connection. In Azure DevOps, in Project set
 It seems like the workspace, also known as the client, is incorrectly configured, or was somehow entered wrongly as a variable value.
 One thing to try is, on the build machine, run p4v and do a manual sync and rectify any errors there first.
 
+### When building the code, the build agent has an error CS0042... Access is denied
+
+When setting up the build workspace, set the option 'allwrite'. Check this link for more info: [Prevent Perforce from marking files as read-only](https://stackoverflow.com/questions/48195633/prevent-perforce-from-marking-files-as-read-only)
+
 ### During build, the pipeline complains that it cannot find the Unreal Automation Tool / RunUAT.bat
 
 The pipeline code under task: PowerShell@2 is hard-coded to where the Azure Game Development VM installs Unreal Engine by default. If you are using your own installation, please replace the relevant code snippet to reflect where your installation of Unreal Engine.

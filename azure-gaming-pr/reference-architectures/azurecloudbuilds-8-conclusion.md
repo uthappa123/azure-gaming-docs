@@ -23,7 +23,7 @@ If you used the Azure Game Development VMs in the pipeline, you might want to st
 Of course, this is **not** a production-grade pipeline yet! Build on this pipeline and make it really work for your studio's situation.
 
 Below are just a few other areas to explore with the pipeline you've just built. 
-Please contact us at [azuregamedevs@microsoft.com](mailto:azuregamedevs@microsoft.com) for any feedback or inquiries.
+Please contact us at azuregamedevs@microsoft.com for any feedback or inquiries.
 
 ## Identity Management
 
