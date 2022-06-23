@@ -30,7 +30,7 @@ This article will describe the architecture used in [this sample on GitHub](http
 
 ## Architecture Considerations
 
-For [Azure Speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech), max number of transactions per second per Speech service resource is 200 transactions per second (TPS) for S0 (standard pricing tier) users. You can submit a request to increase this amount. For details, see [Text-to-speech quotas and limits per resource](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-services-quotas-and-limits#text-to-speech-quotas-and-limits-per-resource). You can also use the [Long Audio API](https://docs.microsoft.com/azure/cognitive-services/speech-service/long-audio-api) to asynchronously synthesize text-to-speech files longer than 10 minutes (for example, audio books or lectures). 
+For [Azure Speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech), max number of transactions per second per Speech service resource is 200 transactions per second (TPS) for S0 (standard pricing tier) users. You can submit a request to increase this amount. For details, see [Text-to-speech quotas and limits per resource](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-services-quotas-and-limits#text-to-speech-quotas-and-limits-per-resource). You can also use the [Long Audio API](https://docs.microsoft.com/azure/cognitive-services/speech-service/long-audio-api) to asynchronously synthesize text-to-speech files longer than 10 minutes. 
 
 When enabling this functionality in your game, keep in mind the following benefits:
 
