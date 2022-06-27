@@ -13,7 +13,7 @@ ms.prod: azure-gaming
 
 Help bring everyone into the conversation by converting text messages to audio using **Text-to-Speech** for scenarios, such as game dialogue prototyping, greater accessibility, or NPC voices. Text-to-Speech includes prebuilt neural voice and custom neural voice features. Prebuilt neural voice can provide highly natural out-of-box voices with leading voice variety in terms of a large portfolio of languages and voices. Custom neural voice is an easy-to-use self-service for creating a highly natural custom voice. For details on the two features and voice samples, see [Text-to-Speech overview](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
 
-This article will describe the architecture used in [this sample on GitHub](https://github.com/Azure-Samples/gaming-cognitive-services-text-to-speech). Keep in mind that the code from this reference architecture is only an example for guidance and there may be places to optimize the code before using in a production environment. You can also see the quickstart on [how to convert text to speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-text-to-speech).
+Keep in mind that [this sample on GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk) about **Azure Speech** referenced in below architecture is only an example for guidance and there may be places to optimize the code before using in a production environment. You can also see the quickstart on [how to convert text to speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-text-to-speech).
 
 ## Architecture Diagram
 
@@ -94,7 +94,7 @@ To learn about the benefits and capabilities of the Text-to-Speech service, see 
 
 ### Azure Text Analytics
 
-This service is required to detect the language of the chat string submitted by the player. At the moment, the service is only able to return the ISO 639-1 name ("en", "fr", etc) meaning a conversion table is going to be required as the Text to Speech language codes are a more granular, supporting specific language and dialect. For the full list see [language and region support for Speech Service API](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech).
+This service is required to detect the language of the chat string submitted by the player. At the moment, the service is only able to return the ISO 639-1 name ("en", "fr", etc) meaning a conversion table is going to be required as the Text to Speech language codes are a more granular, supporting specific language and dialect. For the full list see [language and region support](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech).
 
 Alternatively, instead of the conversion table, you could let your players choose their preferred local language (i.e: Mexican Spanish instead of Argentinian Spanish) and the voice as part of the game settings.
 
