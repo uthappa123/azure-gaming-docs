@@ -13,7 +13,7 @@ ms.prod: azure-gaming
 
 Help bring everyone into the conversation by converting text messages to audio using **Text-to-Speech** for scenarios, such as game dialogue prototyping, greater accessibility, or NPC voices. Text-to-Speech includes prebuilt neural voice and custom neural voice features. Prebuilt neural voice can provide highly natural out-of-box voices with leading voice variety in terms of a large portfolio of languages and voices. Custom neural voice is an easy-to-use self-service for creating a highly natural custom voice. For details on the two features and voice samples, see [Text-to-Speech overview](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech).
 
-Keep in mind that [this sample on GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk) about **Azure Speech** referenced in below architecture is only an example for guidance and there may be places to optimize the code before using in a production environment. You can also see the quickstart on [how to convert text to speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-text-to-speech).
+Keep in mind that [this sample on GitHub](https://github.com/Azure-Samples/cognitive-services-speech-sdk) about **Azure Speech** referenced in architecture below is only an example for guidance and there may be places to optimize the code before using in a production environment. You can also see the quickstart on [how to convert text to speech](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-text-to-speech).
 
 ## Architecture Diagram
 
