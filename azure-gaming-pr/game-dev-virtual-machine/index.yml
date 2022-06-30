@@ -30,6 +30,8 @@ landingContent:
         links:
         - text: Create a Game Development Virtual Machine with Unreal Engine
           url: create-game-development-vm-for-unreal.md
+        - text: Create a Game Development Virtual Machine with an ARM template
+          url: create-game-development-vm-arm-template.md    
         - text: Remoting into the Game Development Virtual Machine with Teradici
           url: remote-to-vm-with-teradici.md
         - text: Remoting into the Game Development Virtual Machine with Parsec
