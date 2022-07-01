@@ -14,13 +14,16 @@ The Game Development Virtual Machine is built on top of common Windows images cu
 
 We are very eager to hear your feedback and invite you to share your experiences and feedback in our <a href="https://forms.office.com/r/VHK5iEqeBm" target="_blank">survey</a>; however, be sure to [create a ticket](https://azure.microsoft.com/support/create-ticket/) in the Azure Portal if you run into issues that require support to help unblock you. Additionally, join our <a href="https://aka.ms/msftgamedevdiscord" target="_blank">Game Dev Discord channel</a> to connect with thousands of game developers around the world and talk with the Game Development Virtual Machine team.
 
+> [!TIP] 
+> Did you know? If you are an independent game developer interested in working with the Game Dev VM, join the <a href="https://www.azure.com/id" target="_blank">ID@Azure</a> program to get free access to developer tools and support from industry experts. 
+
 This article describes common support issues that customers might experience, and guidance from us about how to resolve them.
 
 ## VM deployment support
 
 ### Reached quota limits
 
-> [!NOTE]
+> [!IMPORTANT]
 > Currently, <a href="/azure/virtual-machines/nvv3-series" target="_blank">Standard NVSv3</a> and <a href="/azure/virtual-machines/nct4-v3-series" target="_blank">Standard NCASv3_T4</a> VM sizes are in high demand. If you opened a quota request before but it was then backlogged, you can now fill and submit this <a href="https://forms.office.com/r/pjvL30p2zC" target="_blank">form</a> to expedite the approval process. Please provide the service request number on the form. You can also make an inquiry of your quota service request by reaching the Game Dev VM engineering team via our <a href="https://aka.ms/msftgamedevdiscord" target="_blank">Discord Channel</a> under Game Dev VM, # public-preview. Otherwise, you can try with <a href="/azure/virtual-machines/nv-series" target="_blank">Standard NV</a> size which has better availability though less powerful. 
 
 The most common issue when deploying the Game Development Virtual Machine is when the Azure region you are deploying to does not have the desired quota, especially for GPU SKUs which are high in demand. You may receive a similar error like the following when you deploy the VM: _"Operation could not be completed as it results in exceeding approved standardNVSv3Family Cores quota."_
