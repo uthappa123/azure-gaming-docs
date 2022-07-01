@@ -9,21 +9,21 @@ ms.author: brpeek
 ms.prod: azure-gaming
 ---
 
-# Synchronous Multiplayer Using Azure Kubernetes Service (AKS)
+# Synchronous Multiplayer Using Azure Kubernetes Service (AKS) and Thundernetes
 
 You can choose to manage containerized dedicated game servers using the Kubernetes orchestrator on Azure with the managed Azure Kubernetes Service (AKS).
 
-This article will describe the architecture used in [project Thundernetes](https://github.com/PlayFab/thundernetes).
+This article will describe the architecture used in [project Thundernetes](https://playfab.github.io/thundernetes).
 
 ## Architecture diagram
 
-[![Synchronous multiplayer using Azure Kubernetes Service](media/multiplayer/multiplayer-aks-hosting.png)](media/multiplayer/multiplayer-aks-hosting.png)
+[![Synchronous multiplayer using Azure Kubernetes Service and Thundernetes](media/multiplayer/multiplayer-aks-hosting.png)](media/multiplayer/multiplayer-aks-hosting.png)
 
 ## Relevant services
 
-- [Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview) - Connects the player to the most appropriate regional zone based on latency.
 - [Azure Kubernetes Service](https://azure.microsoft.com/services/kubernetes-service/) - Simplifies the deployment and operations of Kubernetes.
 - [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) - Allows storing images for all types of container deployments.
+- [Thundernetes](https://playfab.github.io/thundernetes) - Thundernetes makes it easy to run your game servers on Kubernetes.
 
 ## Architecture considerations
 
@@ -52,7 +52,6 @@ If you don't have an Azure subscription, create a [free account](https://aka.ms/
 
 You are responsible for the cost of the Azure services used while running these reference architectures.  The total amount will vary based on usage. See the pricing webpages for each of the services that were used in the reference architecture:
 
-- [Azure Traffic Manager](https://azure.microsoft.com/pricing/details/traffic-manager/)
 - [Azure Kubernetes Service](https://azure.microsoft.com/pricing/details/kubernetes-service/)
 - [Azure Container Registry](https://azure.microsoft.com/pricing/details/container-registry/)
 

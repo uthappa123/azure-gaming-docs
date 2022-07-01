@@ -33,7 +33,7 @@ In both ways, you might be prompted to sign in to your Azure account if you're n
     - **Subscription** : If you have more than one subscription, select the one on which the machine will be created and billed. You must have resource creation privileges for this subscription.
     - **Resource group** : Create a new group or use an existing one.
     - **Region** : Select the datacenter that's most appropriate. For fastest network access, it's the datacenter that has most of your existing workloads or is the closest to your physical location. Learn more about [Azure Regions](https://azure.microsoft.com/global-infrastructure/regions/).
-    - **Use as a build server** : This is optional. If you do not expect to use 3D applications or work with 3D content on this VM, instead you want to use it for game build purpose, as illustrated in <a href="./overview#using-as-build-servers" target="_blank">this build servers example</a>, you can check this box. It gives you more VM size options since GPU is not required.
+    - **Use as a build server** : This is optional. If you do not expect to use 3D applications or work with 3D content on this VM, instead you want to use it for game build purpose, as illustrated in <a href="./overview.md#using-as-build-servers" target="_blank">this build servers example</a>, you can check this box. It gives you more VM size options since GPU is not required.
     - **VM Size** : This VM currently supports the sizes of [NV](/azure/virtual-machines/nv-series), [NVv3](/azure/virtual-machines/nvv3-series), and [T4](/azure/virtual-machines/nct4-v3-series), if you are not using it as a build server. Choose a size that is appropriate for your workloads. Read more about [Windows VM sizes in Azure](/azure/virtual-machines/sizes).
     - **Virtual machine name** : Enter the name of the virtual machine. This is how it will appear in your Azure portal.
     - **Admin username** : Enter the administrator username. This is the username you will use to log into your virtual machine, and need not be the same as your Azure username.
@@ -43,15 +43,15 @@ In both ways, you might be prompted to sign in to your Azure account if you're n
 > [!NOTE]
 > If you choose Windows 10, you need confirm that you have an eligible license with [multi-tenant hosting rights](/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment), unless you want to use this VM for dev/test scenarios if you have an appropriate [Visual Studio (formerly MSDN) subscription](/azure/virtual-machines/windows/client-images).
 
-6. Click  **Next: Game Development Tools**
-7. You will see **Select Game Engine.** Select **Unreal Engine Version 4.27** or **5.0 Preview** from the dropdown. A list of pre-installed common free game Development tools will show up.
+6. Click  **Next: Game Development Tools**.
+7. You will see **Select Game Engine**. Select your desired engine and version from the dropdown. A list of pre-installed common free game Development tools will show up.
 
     - This VM supports [Unreal Pixel Streaming](https://docs.unrealengine.com/4.27/SharingAndReleasing/PixelStreaming/). You can check the box if you want to enable this feature, which opens the required ports.
     - This VM can be configured to pull down a repository from Perforce after deployment if you already have a Perforce Helix Core version control server in place. If desired, check the box Connect to and sync a Perforce depot to configure the Perforce depot to pull from. If you do not have a Perforce server setup, you can [spin one up from the Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/perforce.perforce-enhanced-studio-pack).
     - You can select which version of Microsoft Game Development Kit (GDK) to be included. The version selected for the GDK will be installed in the background once you first login. For Xbox console development, there will need to be additional [steps to enable this development](/gaming/gdk/_content/gc/tools-console/gc-tools-console-toc), as specified in the NDA developer program.
     - If you need use Incredibuild and already have the license, you can upload the license file here. This VM will automatically install and activate Incredibuild for you. Otherwise, Incredibuild will not be installed. 
 
-8. Click Next: **Remote Access Configuration**
+8. Click Next: **Remote Access Configuration**.
 9. Choose RDP, Teradici or Parsec from the **Remote Access Technology** dropdown. If Teradici or Parsec is chosen, you need fill additional licensing information that is used to register the desired agent.  
 10. Click **Next: VM Network**. Under **Configure Public IP and DNS** , and **Configure virtual networks,** you can create new resources, or pick the existing resources, depending on your business needs. **Note:** If you select “None” for the Public IP Address, a private IP address will be assigned to this VM. That private IP address is the next available IP address in the subnet you configure for this VM.
 11. Click **Next: Data Storage**.
@@ -59,14 +59,16 @@ In both ways, you might be prompted to sign in to your Azure account if you're n
     - From here you can create a disk volume in the VM for data storage that is striped across multiple data disks, which improves the disk throughput. If you don’t want to use the striped disk, please set the number of data disks to be 1. If you don’t want to attach a data disk at all, please set the number to be 0. This VM will still have an OS disk and a temporary data disk as the default configuration. **Note:** It is highly recommended to choose at least 2 disks that will be striped together for the best IOPS performance, and to install your source control and game projects on that drive for the best experience and available space on the VM. The C drive defaults to 256GB and could quickly run out of space for medium to large projects.
     - You can also mount an existing Azure Storage File Share if you have one, which allows for network shares across your team in Azure.
 
-12. Click **Next: Management.**
+12. Click **Next: Management**.
   
     - You can choose to integrate Azure Active Directory (AAD). It is a similar experience as you enable AAD for a regular Azure virtual machine. With AAD, you can use your corporate credentials to login to this Game Dev VM. Please check both boxes if you want to enable AAD. Otherwise, leave those two boxes blank. [Learn more about integrating with Azure Active Directory](./integrate-vm-with-aad.md).
     - Please also choose how you want to patch Windows OS with **Guest OS updates** options.
 
-13. Click **Next: Tags**. Tags are used to categorize resources, usually for billing management purposes. If you don't need tags now, you can skip this page and click **Next: Review + create**
+13. Click **Next: Advanced**. This is an optional step if you plan to use the Game Dev VM image as your studio's beginning image and then further customize it to make your new base image. For example, adding/removing tools, changing VM configuration like wallpaper. If you will do so, please check the box "VM will be used with sysprep to create a custom image". Otherwise, leave it blank.  
 
-14. **Review+create**
+14. Click **Next: Tags**. Tags are used to categorize resources, usually for billing management purposes. If you don't need tags now, you can skip this page and click **Next: Review + create**
+
+15. **Review+create**.
 
     - The Azure Portal will validate whether all the required information has been filled. If any information is missing or incorrect, you will see the validation failed message at the top. You can click **View error details** to know what is causing the error. You will then need to go back to complete the missing field(s) or make the correction.
     - Once validation is passed, please verify that all the information you entered is correct

@@ -28,7 +28,7 @@ Alternatively, select an Azure VM or physical machine that you would like to use
 
 ## Setting up the build agent VM
 
-1. Find the [Azure Game Development VM](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-agci-gaming.agci-gamedev-vm) offering in the Azure Marketplace and create a VM.
+1. Find the [Azure Game Development VM](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-agci-gaming.agci-gamedev-vm?tab=Overview) offering in the Azure Marketplace and create a VM.
 
 [![Create Game Dev VM 1](media/cloud-build-pipeline/acb4-buildagent/gdvmcreate1.png)](media/cloud-build-pipeline/acb4-buildagent/gdvmcreate1.png)
 
@@ -155,6 +155,8 @@ To confirm that your build agent is connecting correctly with Azure DevOps, look
 2. Configure the workspace as follows:
 
 [![Build User Perforce Workspace](media/cloud-build-pipeline/acb4-buildagent/p4workspace.png)](media/cloud-build-pipeline/acb4-buildagent/p4workspace.png)
+
+3. Make sure you configure the workspace with the allwrite option. This prevent file access errors when Perforce marks the files read-only by default. See [this link](https://stackoverflow.com/questions/48195633/prevent-perforce-from-marking-files-as-read-only) for more info.
 
 ## Optional: Build acceleration
 
