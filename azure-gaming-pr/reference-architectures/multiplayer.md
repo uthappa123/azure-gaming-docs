@@ -44,7 +44,6 @@ Compute services vary based on the level of management they offer, from those ma
 - **Raw Virtual Machines** - Everything is managed by you, it needs a custom scaling solution
 - **Azure Container Instances (ACI)** - Everything is managed by you but in a container, it needs a custom scaling solution
 - **Virtual Machine Scale Sets** / **Batch** - Manages the scaling of Virtual Machines on your behalf based on rules you define
-- **Service Fabric** / **Azure Kubernetes Service (AKS)** - Manages the orchestration of containers on your behalf
 - **Azure PlayFab Multiplayer Servers** - Higher level orchestration of game servers on your behalf, running on top of Azure. For more information see [Azure PlayFab Multiplayer Servers](https://docs.microsoft.com/gaming/playfab/features/multiplayer/servers/).
 
 ### Operating System
@@ -57,7 +56,6 @@ The table below provides an overview of what operating systems are supported by 
 |Azure Container Instance (ACI)|Yes* (Windows 10 1607 only)|Yes|
 |Virtual Machine Scale Sets|[Yes](https://docs.microsoft.com/azure/virtual-machine-scale-sets/quick-create-template-windows)|[Yes](https://docs.microsoft.com/azure/virtual-machine-scale-sets/quick-create-template-linux)|
 |Batch|Yes|[Yes](https://docs.microsoft.com/azure/batch/batch-linux-nodes)|
-|Service Fabric|[Yes](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started)|[Yes](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux)|
 |Azure Kubernetes Service (AKS)|[Only via AKS-Engine](https://github.com/Azure/aks-engine/blob/master/docs/topics/windows.md)|[Yes](https://docs.microsoft.com/azure/aks/intro-kubernetes)|
 |Functions|Yes|Yes (dedicated mode)|
 
@@ -185,7 +183,7 @@ Make sure your software is scalable and is prepared for your players to enjoy th
 
 ### Deployment Methodology
 
-If you are leveraging Virtual Machine Scale Sets, Service Fabric or Batch, make use of a **single cluster**, **multiple Virtual Machine Scale sets** and **scale in small increments between 1-4 nodes at a time**. Bear in mind that leveraging multiple Virtual Machine Scale Sets will speed the scaling up at the expense of increasing the cost.
+If you are leveraging Virtual Machine Scale Sets or Batch, make use of a **single cluster**, **multiple Virtual Machine Scale sets** and **scale in small increments between 1-4 nodes at a time**. Bear in mind that leveraging multiple Virtual Machine Scale Sets will speed the scaling up at the expense of increasing the cost.
 
 Once you have captured daily workloads in your early tests, use that information to plan your scale up operations proactively **an hour before the capacity is going to be needed**.
 

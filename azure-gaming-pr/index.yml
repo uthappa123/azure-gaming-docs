@@ -49,8 +49,6 @@ productDirectory:
           url: reference-architectures/multiplayer-synchronous-batch.md
         - text: Azure Kubernetes Service (AKS)
           url: reference-architectures/multiplayer-synchronous-aks.md
-        - text: Azure Service Fabric
-          url: reference-architectures/multiplayer-synchronous-sf.md
         - text: Azure Container Instances (ACI)
           url: reference-architectures/multiplayer-synchronous-aci.md
         - text: Custom Server Scaling
