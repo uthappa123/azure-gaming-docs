@@ -23,8 +23,6 @@
           href: reference-architectures/multiplayer-synchronous-batch.md
         - name: Azure Kubernetes Service (AKS)
           href: reference-architectures/multiplayer-synchronous-aks.md
-        - name: Azure Service Fabric
-          href: reference-architectures/multiplayer-synchronous-sf.md
         - name: Azure Container Instances (ACI)
           href: reference-architectures/multiplayer-synchronous-aci.md
         - name: Custom Server Scaling
