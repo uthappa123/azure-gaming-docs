@@ -41,9 +41,9 @@ The following resources are defined in the template:
 - Microsoft.Network/networkInterfaces
 - Microsoft.Compute/virtualMachines
 
-## Deploy the template
+## Deploy the template with default parameters
 
-To use the template from the Azure CLI, login in and choose your subscription. Then run:
+To use the template from the Azure CLI, login in and choose your subscription. Then run the scripts below. This is a basic deployment with default Game Dev VM parameters. It deploys a Windows 10 VM with Unreal Engine 5.0.1 installed which has RDP as the remote connection method.
 
 ```azurecli-interactive
 read -p "Enter the name of the resource group to create:" resourceGroupName && 
